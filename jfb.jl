@@ -28,13 +28,13 @@
 2 * 2 !== 4
 
 && # stands for AND 
-true && true
-true && false
+#true && true
+#true && false
 
 || # stands for OR 
-true || true
-false || false
-true || false
+#true || true
+#false || false
+#true || false
 
 # true and false stands for one and zero
 false == 0
@@ -148,5 +148,103 @@ and to close:
 s1 = "Hello, World!"
 s1
 
+s2 = """This is an "interesting" tutorial."""
+s2
+println(s2)
+print(s2)
+println("Line 1\nLine 2\nLine 3") #new Line
+println("1\t2\t3\t4\t5") #tabulation
+
+snowperson = "\:snowman:" # on console
+snowperson * snowperson
+snowperson ^ 3
+repeat(snowperson, 3)
+
+s3 = "How much wood"
+s4 = " "
+s5 = "would a woodchuck chuck?"
+s6 = s3 * s4 * s5 #concatenate strings
+
+s7 = string(s3, s4, s5)
+
+#interpolation
+kpatty = 1.50
+cbits = 1.25
+sfsoda = 1.25
+kmeal = 3.50
+place = "Krusty Krab"
+
+println("I am eating lunch at the $place.") #can also be println("I am eatinglunch at the", place, ".")
+println("I bought separately = $(kpatty + cbits + sfsoda) dollars.")
+println("Krabbe meal deal = $kmeal dollars.")
+
+#to actually show the dollar sign:
+println("\$100")
+println("\euro")  #console
+
+print("Enter some text: "); text = readline()
+text
+print("Enter some number: "); text = readline()
+
+num = parse(Int64, text) #parse converts to any type you want
+
+typeof(text) #should be string
+typeof(num) #should be Int64
+
+i = 123
+snum = string(i) #function string converts object to strings
+
+typeof(i)
+typeof(snum)
+
+color = :mycolor #: followed by name creates a datatype called symbol
+typeof(color)
+
+printstyled(s1, bold = false, color = :red) #printstyled allows us to print stylized outputs
+printstyled(s1, bold = true, color = :red) #printstyled allows us to print stylized outputs
 
 
+#=
+begin   
+    <code block>
+end
+=#
+
+begin
+    printstyled("   π", bold = true, color = :green)
+    println()
+    printstyled("  π ", bold = true, color = :red)
+    printstyled("π", bold = true, color = :magenta)
+end
+
+###TUTORIAL VIDEO 4:
+## Data Structure: Arrays, turples && dictionaries
+#dictionary: seems to work like a list of R
+d1 = Dict()
+typeof(d1)
+
+d1 = Dict("A" => 1, "B" => 3, "C" => 5, "D"=> 7)
+#not actually indexing, but especificly seeing a value
+d1["A"]
+d1["B"]
+
+d1["A"] = 10
+d1["E"] = 100
+
+d1
+
+d2 = Dict("A" => 10, "B" => 30, "C" => 50, "D" => 100)
+d3 = Dict("A" => 100, "B" => 300, "C" => 500, "D" => 1000)
+keys(d1) #returns the name of the keys
+values(d1)
+d1
+d2
+merge(d1, d2)
+d3
+push!(d3, "G" => 350) #"push-bang" it says that the mutation is permanent INCLUDES
+pop!(d2, "A") #"pop-gang" REMOVES an entry
+
+"A" in keys(d3) #boolean test to check if key "A" exists in d3
+10 in values(d2) #boolean test to check if value 10 exists in d2
+
+#tuple - can select by indexing retomar em 5m48s
