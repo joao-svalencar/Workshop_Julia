@@ -1,9 +1,10 @@
 #####Julia For Talented Amateurs YouTube channel
 ####Julia for beginners tutorial series 1:13 (Watched on speed 1.25)
-###TUTORIAL VIDEO 1:
+
+################################################## TUTORIAL VIDEO 1:##################################################
 ##Installation of Julia and related programs
 
-###TUTORIAL VIDEO 2: 
+################################################## TUTORIAL VIDEO 2: ##################################################
 ##Theory on computer science and basics:
 
 #BASIC MATH
@@ -14,7 +15,7 @@
 # % shows for the remainder in a division:
 4 % 2 # is zero, because the remainder is zero.
 5 % 2 # is one, because the remainder is one.
-# Please Excuse My Dear Aunt Sally:
+# PEMDS = Please Excuse My Dear Aunt Sally:
 # Parenthesis Exponents Multiplication/Divison Addition/Subtraction
 1 + (2 * 3) ^ 4 * 5
 
@@ -42,7 +43,7 @@ true == 1
 false + false
 false + true
 
-###TUTORIAL VIDEO 3:
+################################################## TUTORIAL VIDEO 3: ##################################################
 ## Variables, Expressions, Memory && Types
 #Variables: Storage location
 x = 1
@@ -217,13 +218,13 @@ begin
     printstyled("π", bold = true, color = :magenta)
 end
 
-###TUTORIAL VIDEO 4:
+################################################## TUTORIAL VIDEO 4: ##################################################
 ## Data Structure: Arrays, turples && dictionaries
-#dictionary: seems to work like a list of R
-d1 = Dict()
+#dictionary: R list?
+d1 = Dict()#opens a "dictionary"
 typeof(d1)
 
-d1 = Dict("A" => 1, "B" => 3, "C" => 5, "D"=> 7)
+d1 = Dict("A" => 1, "B" => 3, "C" => 5, "D"=> 7) #we have to use => to assign values to keys
 #not actually indexing, but especificly seeing a value
 d1["A"]
 d1["B"]
@@ -246,5 +247,14 @@ pop!(d2, "A") #"pop-gang" REMOVES an entry
 
 "A" in keys(d3) #boolean test to check if key "A" exists in d3
 10 in values(d2) #boolean test to check if value 10 exists in d2
+
+a = collect(10:50)
+b = collect(60:100)
+
+c = Dict("a" => a, "b" => b)
+c = Dict("a" => collect(1:5), "b" => collect(6:10))
+
+100 in values(c) #does not "read" inside the whole dict, on must point to a specific key:
+100 in values(c["b"]) 
 
 #tuple - can select by indexing retomar em 5m48s
